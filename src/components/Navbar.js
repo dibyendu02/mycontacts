@@ -26,9 +26,9 @@ const Navbar = () => {
         <li>
           <Link to="/contacts">Contacts</Link>
         </li>
-        <li>
+        {!token && <li>
           <Link to="/signup">Signup</Link>
-        </li>
+        </li>}
         {token ?
         <button onClick={logout}>Logout</button> :
         <li>

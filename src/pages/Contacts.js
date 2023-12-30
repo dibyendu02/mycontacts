@@ -4,6 +4,7 @@ import axios from "axios";
 import user from "../user-avatar.png"
 import { CiMenuKebab } from "react-icons/ci";
 import {useNavigate} from "react-router-dom";
+import { URL } from "../App";
 
 
 const Contacts = () => {
@@ -18,7 +19,7 @@ const Contacts = () => {
 
   const fetchContacts = async () => {
     try {
-      const response = await axios.get("http://localhost:5001/api/contacts", {
+      const response = await axios.get(URL + "contacts", {
         headers: {
           Auth: `Bearer ${token}`,
         },

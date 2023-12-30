@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
+import { URL } from "../App";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -12,14 +13,14 @@ const Login = () => {
   const userLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5001/api/user/login', {
+      const response = await axios.post(URL+'user/login', {
         email,
         password,
       });
       cookies.set("TOKEN", response.data.token, {
         path: "/",
       });
-      console.log(response.data.token);
+
       console.log('Login successful.');
 
       navigate("/contacts");

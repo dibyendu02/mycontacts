@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Cookies from "universal-cookie";
 import user from "../user-avatar.png"
+import { URL } from '../App';
 
 const SingleContact = () => {
     const [contact, setContact] = useState([]);
@@ -13,12 +14,11 @@ const SingleContact = () => {
 
     const fetchContact = async () => {
         try {
-          const response = await axios.get(`http://localhost:5001/api/contacts/${id}`, {
+          const response = await axios.get(URL+`contacts/${id}`, {
             headers: {
               Auth: `Bearer ${token}`,
             },
           });
-          console.log(response.data);
           setContact(response.data);
         } catch (error) {
           console.error("data fetching failed:", error.message);
