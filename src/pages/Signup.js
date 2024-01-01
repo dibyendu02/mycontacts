@@ -28,8 +28,8 @@ const Signup = () => {
     }
   }
   return (
-    <div className="flex justify-center">
-      <div className="bg-gray-100 w-[90vw] h-[38vh] flex flex-col gap-5 items-center p-10 absolute top-32 rounded-md">
+    <div className="bg-black w-full min-h-screen flex justify-center ">
+      <div className="bg-gray-100 w-[90vw] h-full flex flex-col gap-5 items-center p-10 top-32 rounded-md">
         <input
           className="text-black w-full p-2 rounded border border-black"
           placeholder="username"
@@ -53,13 +53,13 @@ const Signup = () => {
           }}
         />
         <button
-          className="bg-teal-300 hover:bg-teal-400 hover:text-white p-2 px-4 rounded-md"
+          className="bg-slate-300 hover:bg-slate-400 hover:text-white p-2 px-4 rounded-md"
           onClick={userRegister}
         >
           Register
         </button>
         <Link to="/login">
-          <button className="py-1 px-3 hover:bg-white rounded-md">
+          <button className="py-1 px-3 hover:bg-white rounded-md border border-black">
             Login
           </button>
         </Link>

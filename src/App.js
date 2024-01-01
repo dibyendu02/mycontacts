@@ -14,7 +14,7 @@ import SingleContact from "./pages/SingleContact";
 
 const cookies = new Cookies();
 
-export const URL = "https://mycontacts-api-42d8.onrender.com/api/";
+export const URL = "https://mycontacts-api-42d8.onrender.com" + "/api/";
 
 function App() {
   let token = cookies.get("TOKEN");

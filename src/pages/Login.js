@@ -33,8 +33,8 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center">
-      <div className="bg-gray-100 w-[90vw] h-[38vh] flex flex-col gap-5 items-center p-10 absolute top-32 rounded-md">
+    <div className="bg-black w-full min-h-screen flex justify-center pt-20">
+      <div className="bg-gray-100 w-[90vw] h-full flex flex-col gap-5 items-center p-10 top-32 rounded-md">
         <input
           className="text-black w-full p-2 rounded border border-black"
           placeholder="email"
@@ -51,13 +51,13 @@ const Login = () => {
           }}
         />
         <button
-          className="bg-teal-300 hover:bg-teal-400 hover:text-white p-2 px-4 rounded-md"
+          className="bg-slate-300 hover:bg-slate-500 hover:text-white p-2 px-4 rounded-md"
           onClick={userLogin}
         >
           Login
         </button>
         <Link to="/signup">
-          <button className="py-1 px-3 hover:bg-white rounded-md">
+          <button className="py-1 px-3 border border-black hover:bg-white rounded-md">
             Register
           </button>
         </Link>

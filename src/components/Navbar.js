@@ -14,7 +14,7 @@ const Navbar = () => {
     window.location.reload();
   };
   return (
-    <nav className="flex flex-col justify-between px-10 py-5 ">
+    <nav className="flex flex-col justify-between px-10 py-5 bg-black text-white ">
       <div>
         <h1 className="font-bold text-xl ">My Contacts</h1>
       </div>
