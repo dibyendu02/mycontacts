@@ -4,6 +4,8 @@ import axios from "axios";
 import Cookies from "universal-cookie";
 import user from "../user-avatar.png";
 import { URL } from "../App";
+import { FaWhatsapp } from "react-icons/fa";
+import { IoCall } from "react-icons/io5";
 
 const SingleContact = () => {
   const [contact, setContact] = useState([]);
@@ -41,6 +43,10 @@ const SingleContact = () => {
       console.error("deleting failed:", error.message);
     }
   };
+  const openWhatsapp = () => {
+    var whatsappURL = 'https://wa.me/' + contact.phone;
+    window.open(whatsappURL, '_blank');
+  }
 
   useEffect(() => {
     fetchContact();
@@ -55,7 +61,7 @@ const SingleContact = () => {
         <h1>Phone : {contact.phone}</h1>
         <h1>Email : {contact.email}</h1>
       </div>
-      <div className="flex gap-2">
+      <div className="flex gap-5">
         <button className="bg-slate-200 px-10 py-3 rounded-md text-md">
           Update
         </button>
@@ -67,6 +73,16 @@ const SingleContact = () => {
         >
           Delete
         </button>
+      </div>
+      <div className="flex flex-col gap-5">
+        <div onClick={openWhatsapp} className="bg-green-600 text-white w-[65vw] p-3 flex justify-center items-center gap-2 rounded-md ">
+          <FaWhatsapp size={20}/>
+          <h1>Whatsapp</h1>
+        </div>
+        <a href={`tel:${contact.phone}`} className="bg-red-600 text-white w-[65vw] p-3 flex justify-center items-center gap-2 rounded-md ">
+          <IoCall size={20}/>
+          <h1>Call</h1>
+        </a>
       </div>
 
       {isOpen && (
