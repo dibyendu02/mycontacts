@@ -52,7 +52,7 @@ const SingleContact = () => {
       </div>
       <div className=" text-xl flex flex-col items-center text-white">
         <h1 className="font-bold">{contact.name}</h1>
-        <h1>Phone : +91 {contact.phone}</h1>
+        <h1>Phone : {contact.phone}</h1>
         <h1>Email : {contact.email}</h1>
       </div>
       <div className="flex gap-2">
