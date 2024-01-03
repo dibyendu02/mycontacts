@@ -17,11 +17,11 @@ const Navbar = () => {
     window.location.reload();
   };
   return (
-    <nav className="flex justify-between items-center p-10 bg-black text-white ">
+    <nav className="flex justify-between items-center w-96 p-10 bg-black text-white ">
       <div>
-        <h1 className="font-bold text-2xl ">Keeper</h1>
+        <Link to="/"><h1 className="font-bold text-2xl ">Keeper</h1></Link>
       </div>
-      <div>
+      <div className="relative">
         <RxHamburgerMenu
           onClick={() => {
             
@@ -31,7 +31,7 @@ const Navbar = () => {
           size={24}
         />
         {isOpen && (
-          <ul className="flex flex-col items-center gap-5 w-28 py-5 absolute right-5 top-20 rounded-md text-black font-bold bg-slate-300 ">
+          <ul className="flex flex-col items-center gap-5 w-28 py-5 absolute right-0 top-8 rounded-md text-black font-bold bg-slate-300 ">
             <li>
               <Link to="/">Home</Link>
             </li>
