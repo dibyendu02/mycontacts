@@ -29,6 +29,7 @@ const Login = () => {
       //for updating the token
       window.location.reload();
     } catch (error) {
+      alert("login failed");
       console.error("Login failed:", error.message);
     }
   };

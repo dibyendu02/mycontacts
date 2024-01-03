@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Cookies from "universal-cookie";
 import axios from "axios";
-import user from "../user-avatar.png";
+import user from "../user.jpg";
 import { CiMenuKebab } from "react-icons/ci";
 import { useNavigate } from "react-router-dom";
 import { URL } from "../App";
@@ -118,7 +118,7 @@ const Contacts = () => {
               className="flex  items-center gap-10 bg-slate-200 p-2 rounded-md"
             >
               <div>
-                <img src={user} />
+                <img src={user} width={50} style={{borderRadius: "50%"}} />
               </div>
               <div className="flex justify-between w-[70%] ">
                 <div>
