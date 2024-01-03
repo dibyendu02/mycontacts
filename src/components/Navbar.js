@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Cookies from "universal-cookie";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -9,6 +9,25 @@ const Navbar = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
+  const ref = useRef(null);
+  useEffect(() => {
+    // Function to handle clicks outside the div
+    const handleClickOutside = (event) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        // Clicked outside the div
+        setIsOpen(false);
+      }
+    };
+
+    // Attach the event listener
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [ref]);
+
   const logout = () => {
     // Destroy the cookie
     cookies.remove("TOKEN", { path: "/" });
@@ -17,7 +36,7 @@ const Navbar = () => {
     window.location.reload();
   };
   return (
-    <nav className="flex justify-between items-center w-96 p-10  text-white ">
+    <nav className="flex justify-between items-center w-96 py-10 px-5  text-white ">
       <div>
         <Link to="/"><h1 className="font-bold text-2xl ">Keeper</h1></Link>
       </div>
@@ -31,7 +50,7 @@ const Navbar = () => {
           size={24}
         />
         {isOpen && (
-          <ul className="flex flex-col items-center gap-5 w-28 py-5 absolute right-0 top-8 rounded-md text-black font-bold bg-slate-300 ">
+          <ul ref={ref} className="flex flex-col items-center gap-5 w-28 py-5 absolute right-0 top-8 rounded-md text-black font-bold bg-slate-300 z-10 ">
             <li>
               <Link to="/">Home</Link>
             </li>

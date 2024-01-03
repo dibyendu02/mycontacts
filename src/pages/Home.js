@@ -1,10 +1,12 @@
 import React from "react";
 import Layout from "../components/Layout";
+import LottieAnimation from "../components/LottieAnimation";
 
 const Home = () => {
   return (
     <Layout>
-      <div className=" text-white flex flex-col gap-10 items-center pt-48 w-96">
+      <div className=" text-white flex flex-col gap-5 items-center w-96">
+        <LottieAnimation/>
         <div className="flex flex-col items-center text-xl">
           <h1>Worrying about </h1>
           <h1>missing out your contacts?</h1>
