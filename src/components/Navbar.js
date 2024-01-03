@@ -17,7 +17,7 @@ const Navbar = () => {
     window.location.reload();
   };
   return (
-    <nav className="flex justify-between items-center w-80 p-5  text-white ">
+    <nav className="flex justify-between items-center w-96 p-10  text-white ">
       <div>
         <Link to="/"><h1 className="font-bold text-2xl ">Keeper</h1></Link>
       </div>
